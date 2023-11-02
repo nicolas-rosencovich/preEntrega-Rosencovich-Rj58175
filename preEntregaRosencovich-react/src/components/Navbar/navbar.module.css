@@ -1,0 +1,28 @@
+.navContainer{
+background-color: rgb(222, 222, 215);
+display: flex;
+margin: 0;
+margin-bottom: 100px ;
+padding: 0;
+height: 11vh;
+}
+
+.tituloNavbar{
+    font-size: 35px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 800;
+    color: rgb(43, 39, 39);
+}
+.navMenu{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(60, 59, 59);
+}
+
+.navButton{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 255, 0);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 300;
+}
