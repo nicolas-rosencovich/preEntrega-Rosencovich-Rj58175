@@ -1,0 +1,16 @@
+ .Counter{
+background-color: aqua;
+}
+
+.Controls{
+font: optional;
+}
+
+.Button{
+border: solid 8px black;
+}
+
+.number{
+color: red
+
+} 

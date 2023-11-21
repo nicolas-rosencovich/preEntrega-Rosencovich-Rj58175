@@ -2,27 +2,30 @@
 import estilos from "../Navbar/navbar.module.css";
 
 import CartWidget from "../cartWidget/cartWidget.jsx";
-export default function Navbar() {
-  return (
-  
-        <div className={estilos.navContainer}>
-   
-     <nav>
-        <h2 className={estilos.tituloNavbar}>
-        Lamed Uniformes
-    </h2>
-            <ul className={estilos.navMenu}>
-                 <button className={estilos.navButton}>Inicio</button>
-                <button className={estilos.navButton} >Nosotros</button>
-                <button className={estilos.navButton} >Catálogo</button>
-                <button className={estilos.navButton} >Ser miembro</button>
-                <CartWidget/>
-            </ul>
-            
-            
-        </nav>
-        
+
+
+
+const Navbar = ()=>{
+  return(
+    <nav>
+        <Link  to = '/'>
+          <h3 className={estilos.tituloNavbar}> The Music Store</h3>
+        </Link>   
+
+
+        <div className="categories">
+<NavLink to = {`/category/guitarra`} className={({isActive}) => isActive ? 'ActiveOption': 'Option'}>Guitarras </NavLink>
+
+<NavLink to = {`/category/bajo`} className={({isActive}) => isActive ? 'ActiveOption': 'Option'}>Bajos </NavLink>
+
+<NavLink to = {`/category/saxo`} className={({isActive}) => isActive ? 'ActiveOption': 'Option'}>Saxos </NavLink>
 </div>
-   
+<CartWidget/>
+
+        
+    </nav>
   )
 }
+
+
+export default Navbar
