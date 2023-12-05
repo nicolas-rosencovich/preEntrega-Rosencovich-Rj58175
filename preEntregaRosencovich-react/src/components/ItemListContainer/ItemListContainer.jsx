@@ -9,6 +9,7 @@ function ItemListContainer({ saludo }) {
   const { categoryId } = useParams();
   const [loading, setLoading] = useState(true);
 
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -18,12 +19,12 @@ function ItemListContainer({ saludo }) {
         }
       } catch (error) {
         console.error('Error fetching products by category:', error);
-        // Podrías mostrar un mensaje de error en la interfaz aquí
+        // Mostrar un mensaje de error al usuario o realizar otras acciones necesarias
       } finally {
         setLoading(false);
       }
     };
-
+  
     fetchData();
   }, [categoryId]);
 
@@ -37,6 +38,7 @@ function ItemListContainer({ saludo }) {
       )}
     </div>
   );
+  
 }
 
 export default ItemListContainer;
