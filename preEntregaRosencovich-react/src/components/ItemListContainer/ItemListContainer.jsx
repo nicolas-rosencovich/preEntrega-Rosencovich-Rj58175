@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 function ItemListContainer({ saludo }) {
   const [products, setProducts] = useState([]);
   const { categoryId } = useParams();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,6 +18,9 @@ function ItemListContainer({ saludo }) {
         }
       } catch (error) {
         console.error('Error fetching products by category:', error);
+        // Podrías mostrar un mensaje de error en la interfaz aquí
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -26,7 +30,11 @@ function ItemListContainer({ saludo }) {
   return (
     <div>
       <h2 className={estilos.saludoPrincipal}>{saludo}</h2>
-      <ItemList products={products} />
+      {loading ? (
+        <p>Cargando productos...</p>
+      ) : (
+        <ItemList products={products} />
+      )}
     </div>
   );
 }

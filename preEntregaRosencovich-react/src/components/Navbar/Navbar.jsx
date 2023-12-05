@@ -1,32 +1,51 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom'; // Asegurarse de importar Link y NavLink
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import CartWidget from '../cartWidget/cartWidget.jsx';
 
-import estilos from "../Navbar/navbar.module.css";
-import CartWidget from "../cartWidget/cartWidget.jsx";
+import estilos from './navbar.module.css';
 
+const Navbar = () => {
+  const [activeOption, setActiveOption] = useState('');
 
+  const handleNavLinkClick = (category) => {
+    setActiveOption(category);
+  };
 
-const Navbar = ()=>{
-  return(
+  return (
     <nav>
-        <Link  to = '/'>
-          <h3 className={estilos.tituloNavbar}> The Music Store</h3>
-        </Link>   
+      <Link to="/">
+        <h3 className={estilos.tituloNavbar}>The Music Store</h3>
+      </Link>
 
+      <div className="categories">
+        <Link
+          to="/category/guitarra"
+          className={activeOption === 'guitarra' ? estilos.activeOption : estilos.option}
+          onClick={() => handleNavLinkClick('guitarra')}
+        >
+          Guitarras
+        </Link>
 
-        <div className="categories">
-<NavLink to = {`/category/guitarra`} className={({isActive}) => isActive ? 'ActiveOption': 'Option'}>Guitarras </NavLink>
+        <Link
+          to="/category/bajo"
+          className={activeOption === 'bajo' ? estilos.activeOption : estilos.option}
+          onClick={() => handleNavLinkClick('bajo')}
+        >
+          Bajos
+        </Link>
 
-<NavLink to = {`/category/bajo`} className={({isActive}) => isActive ? 'ActiveOption': 'Option'}>Bajos </NavLink>
+        <Link
+          to="/category/saxo"
+          className={activeOption === 'saxo' ? estilos.activeOption : estilos.option}
+          onClick={() => handleNavLinkClick('saxo')}
+        >
+          Saxos
+        </Link>
+      </div>
 
-<NavLink to = {`/category/saxo`} className={({isActive}) => isActive ? 'ActiveOption': 'Option'}>Saxos </NavLink>
-</div>
-<CartWidget/>
-
-        
+      <CartWidget />
     </nav>
-  )
-}
+  );
+};
 
-
-export default Navbar
+export default Navbar;
