@@ -1,5 +1,6 @@
 import{ useState, useEffect} from 'react'
-import{getProductById} from '../../AsyncMock.jsx'
+/* import{getProductById} from '../../AsyncMock.jsx' */
+import {getProductById} from '../Asyncmock/AsyncMock.jsx' 
 import ItemDetail from '../itemDetail/itemDetail.jsx'
 
 

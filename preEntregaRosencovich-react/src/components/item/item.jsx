@@ -1,3 +1,6 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 const Item = ({id, nombre, img, price, stock})=>{
     return(
         <article className="CardItem">

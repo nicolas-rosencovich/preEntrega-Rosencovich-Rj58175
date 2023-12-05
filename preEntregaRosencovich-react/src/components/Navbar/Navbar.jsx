@@ -1,6 +1,7 @@
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom'; // Asegurarse de importar Link y NavLink
 
 import estilos from "../Navbar/navbar.module.css";
-
 import CartWidget from "../cartWidget/cartWidget.jsx";
 
 
